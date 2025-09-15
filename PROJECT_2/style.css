@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+:root{
+  --color-1: black;
+  --text-color: white;
+  --accent-color: blue;
+  --bgcolor-dark: #121321;
+  --bgcolor-light: #ffe; 
+}
+nav{
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bgcolor-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  perspective: 100rem;
+}
+
+nav::before{
+  content: "";
+  position: absolute;
+  height: 24rem;
+  width: 24rem;
+  border-radius: 50%;
+  transform: translate(-15rem, -10rem);
+  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+}
+
+
+nav::after{
+  content: "";
+  position: absolute;
+  height: 24rem;
+  width: 24rem;
+  border-radius: 50%;
+  transform: translate(15rem, 10rem);
+  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+}
+.container{
+  height: 22.5rem;
+  width: 37.5rem;
+  position: relative;
+  z-index: 10;
+  transition: all 0.6s;
+  transform-style: preserve-3d;
+}
+
+.container:hover{
+  transform: rotateY(180deg);
+}
+
+.card{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 2.5rem;
+  backdrop-filter: blur(2.5rem);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2.5rem 4.5rem rgba(0, 0, 0, 0.25);
+  border: 0.1rem solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  backface-visibility: hidden;
+}
+.card__header{
+  display: flex;
+  align-items: center;
+}
+.card__logo-image{
+  width: 6rem;
+  object-fit: fill;
+  object-position: center;
+  display: block;
+}
+.card__name{
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.card__chip-image{
+  width: 5rem;
+  object-fit: cover;
+  margin-left: auto;
+  object-position: center;
+}
+.card__details{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+.card__card-number,
+.card__valid-thru{
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.card__number,
+.card__owner-name,
+.card__valid-date{
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.card__number{
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+}
+.card__owner-name{
+  margin-top: 1em;
+}
+
+.card-back-face{
+  border: none;
+  transform: rotateY(180deg);
+}
+.card__customer-service-contact{
+  font-size: 0.8rem;
+  text-align: center;
+}
+.card__magnetic-strip{
+  position: absolute;
+  height: 4.5rem;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  background: var(--bgcolor-dark);
+}
+.card__cvv-number{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 8rem;
+  height: 4rem;
+  width: 85%;
+  background: repeating-linear-gradient(
+    #fff, 
+    #fff 0.3rem, 
+    #efefef 0rem, 
+    #efefef 0.9rem
+  );
+  color: white;
+  border-radius: 1rem;
+}
+.card__cvv-number i{
+  color: var(--color-1);
+  font-size: 1.2rem;
+  margin-right: -3rem;
+  background: var(--bgcolor-light);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  z-index: -1;
+}
+.card__footer{
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+}
