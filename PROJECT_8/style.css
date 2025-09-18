@@ -224,6 +224,7 @@ body{
 .card__content{
     font-size: var(--fs-16);
     color: var(--clr-primary-800);
+    font-weight: var(--fw-500);
     margin-bottom: auto;
 }
 .card__image{
@@ -232,4 +233,5 @@ body{
     object-fit: cover;
     object-position: center;
     
+
 }
